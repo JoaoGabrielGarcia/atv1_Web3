@@ -19,14 +19,26 @@ public class TelefoneAtualizador {
 	}
 
 	public void atualizar(List<Telefone> telefones, List<Telefone> atualizacoes) {
+		// Atualizar telefones existentes
 		for (Telefone atualizacao : atualizacoes) {
-			for (Telefone telefone : telefones) {
-				if (atualizacao.getId() != null) {
-					if (atualizacao.getId() == telefone.getId()) {
+			boolean atualizado = false;
+			if (atualizacao.getId() != null) {
+				for (Telefone telefone : telefones) {
+					if (atualizacao.getId().equals(telefone.getId())) {
 						atualizar(telefone, atualizacao);
+						atualizado = true;
+						break;
 					}
 				}
 			}
+			// Se não foi atualizado, é novo telefone
+			if (!atualizado) {
+				telefones.add(atualizacao);
+			}
 		}
+		telefones.removeIf(telefone ->
+			telefone.getId() != null &&
+			atualizacoes.stream().noneMatch(a -> a.getId() != null && a.getId().equals(telefone.getId()))
+		);
 	}
 }
