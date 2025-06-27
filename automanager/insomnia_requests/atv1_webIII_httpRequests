@@ -1,0 +1,192 @@
+type: collection.insomnia.rest/5.0
+name: atv1_webIII
+meta:
+  id: wrk_986d9a8386154bdf9cba228602a71c8e
+  created: 1750766486280
+  modified: 1750981519921
+  description: ""
+collection:
+  - url: http://localhost:8080/cliente/clientes
+    name: Todos os clientes
+    meta:
+      id: req_8ea11eba3694420992e47639bd07e930
+      created: 1750766496219
+      modified: 1750981568556
+      isPrivate: false
+      description: ""
+      sortKey: -1750766496219
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente/cliente/1
+    name: Cliente específico
+    meta:
+      id: req_f2e1b1e1621e4f639b0d7808951f21e7
+      created: 1750766630068
+      modified: 1750981627877
+      isPrivate: false
+      description: ""
+      sortKey: -1750766630068
+    method: GET
+    parameters:
+      - id: pair_5f3b330a0ed34b258f0bb095e51021b4
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente/cadastro
+    name: Cadastro de cliente
+    meta:
+      id: req_db44947102214075bba0b49fbb07d82d
+      created: 1750766726046
+      modified: 1750767208020
+      isPrivate: false
+      description: ""
+      sortKey: -1750766726046
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "João Gabriel de Oliveira Garcia",
+        	"nomeSocial": "Du Pão",
+        	"dataNascimento": "2002-03-05",
+        	"dataCadastro": "2025-06-24",
+        	"documentos": [
+        		{
+        			"tipo": "RG",
+        			"numero": "2222222"
+        		},
+        		{
+        			"tipo": "CPF",
+        			"numero": "01010101010101"
+        		}
+        	],
+        	"endereco": {
+        		"estado": "SP",
+        		"cidade": "São José dos Campos",
+        		"bairro": "Monte Castelo",
+        		"rua": "Doze de outubro",
+        		"numero": "93",
+        		"codigoPostal": "12215210",
+        		"informacoesAdicionais": "Casa de portão branco"
+        	},
+        	"telefones": [
+        		{
+        			"ddd": "12",
+        			"numero": "996442600"
+        		}
+        	]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente/atualizar
+    name: Atualizar cliente
+    meta:
+      id: req_c20b5e9933294a8fa61afad3ed16b485
+      created: 1750767261770
+      modified: 1750804346810
+      isPrivate: false
+      description: ""
+      sortKey: -1750767261770
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        		"id": 2,
+        		"nome": "João Gabriel Oliveira Garcia",
+        		"nomeSocial": "Duponesss"
+        	}
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/cliente/excluir
+    name: Excluir Cliente
+    meta:
+      id: req_58bd7e75e11d4c2f95d499b2de349691
+      created: 1750767407532
+      modified: 1750981655293
+      isPrivate: false
+      description: ""
+      sortKey: -1750767407532
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 2
+        }
+    parameters:
+      - id: pair_57efbd9b8b8a48269eefd7bd567e79ad
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_ca3c5e5773e6f638220dcf5f256db2b39d91a4b3
+    created: 1750766486301
+    modified: 1750766486301
+environments:
+  name: Base Environment
+  meta:
+    id: env_ca3c5e5773e6f638220dcf5f256db2b39d91a4b3
+    created: 1750766486295
+    modified: 1750766486295
+    isPrivate: false
